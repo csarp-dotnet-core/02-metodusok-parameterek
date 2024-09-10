@@ -50,3 +50,20 @@ Console.WriteLine($"Cserélés előtt: a = {a}, b = {b}");
 Swap(ref a, ref b);
 
 Console.WriteLine($"Cserélés után: a = {a}, b = {b}");
+
+// Az out kulcsszó a C#-ban lehetővé teszi, hogy egy metóduson belül a paraméterek értékét "kiadjuk" a metódusból. Az out kulcsszó C#-ban rendkívül hasznos, amikor egy metódusból több értéket akarunk visszaadni
+
+static void Calculate(int x, int y, out int sum, out int difference)
+{
+    sum = x + y;
+    difference = x - y;
+}
+
+int sum, difference;
+
+// Az out paraméterek segítségével visszakapjuk az eredményeket
+Calculate(a, b, out sum, out difference);
+
+Console.WriteLine($"Összeg: {sum}");
+Console.WriteLine($"Különbség: {difference}");
+
