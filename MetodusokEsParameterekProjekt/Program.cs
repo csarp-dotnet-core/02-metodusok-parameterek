@@ -32,3 +32,21 @@ static void ErtekKiiras(int a, int b)
 
 int a = 2, b = 2;
 ErtekKiiras(a, b);
+
+// Paraméterek hivatkozásként való megadása
+// A metódus paraméterként hivatkozásként kap meg egy változót, nem pedig érték szerint. 
+static void Swap(ref int x, ref int y)
+{
+    int temp = x;
+    x = y;
+    y = temp;
+}
+
+a = 10;
+b = 20;
+Console.WriteLine($"Cserélés előtt: a = {a}, b = {b}");
+
+// A ref segítségével megváltoztatjuk a változók értékeit
+Swap(ref a, ref b);
+
+Console.WriteLine($"Cserélés után: a = {a}, b = {b}");
